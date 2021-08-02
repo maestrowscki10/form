@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html style="text-align:center;">
+
+<head>
+<title>YOUR FORM</title>
+<style>
+   fieldset {
+            border: 1px solid;
+            padding: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 140px;
+            text-align: right;}
+  form{
+text-align: center;
+background-color: #4879b9;
+display: flex;
+            flex-direction: column;
+        }
+
+
+
+</style>
+<script type="text/javascript">
+	function display(){
+		if(document.myform.fname.value == "" || !isNaN(document.myform.fname.value)){
+			alert("First name is required");
+			document.myform.fname.value
+			return false;
+		}
+			if(document.myform.lname.value == "" || !isNaN(document.myform.lname.value)){
+			alert("Last name is required");
+			document.myform.lname.value
+			return false;
+		}
+			if(isNaN(document.myform.age.value)) {
+				alert("Wrrite age inform of a number");
+			 	
+				return false;
+			}
+			else if (document.myform.age.value == "") {
+				alert("Age plot should not be empty");
+				return false;
+			}
+					if(document.myform.email.value == "" ){
+			alert("Email should not be empty");
+			document.myform.email.value.focus();
+			return false;
+		}
+			var emailid= document.myform.email.value;
+				atpos=emailid.indexOf("@");
+				dotpos=emailid.lastIndexOf(".");
+
+				if(atpos < 1 || (dotpos - atpos) < 2){
+					alert("Write the correct Email Address");
+					document.myform.email.value.focus();
+					return false;
+				}
+
+					if(document.myform.password.value == "" ){
+			alert("Provide your password");
+			document.myform.password.value
+			return false;
+		}
+		else if(document.myform.password.value.length <6){
+			alert("Password length is invalid");
+			return false;
+		}
+				
+
+
+			
+		}
+
+
+		
+
+
+</script>
+</head>
+
+<body >
+<h1 style="text-align:center;"><u>Registration Form</u></h1>
+<br>
+
+<form name="myform" onsubmit=return(display())>
+	<fieldset>
+<label>First name:</label>
+<input type="text" id="fname" name="fname"><br>
+
+<label>Last name:</label>
+<input type="text" id="lname" name="lname"><br>
+
+<label>Age:</label>
+<input type="text" id="age" name="age"><br>
+
+<label>Email: </label>
+<input type="text" id="email" name="email"><br>
+
+<label>Password: </label>
+<input type="password" id="password" name="password"><br>
+
+<label>SEX </label>
+        <input type="radio" name="gender" />Male
+        <input type="radio" name="gender" />Female <br>
+        <label>CHECKBOX</label>
+        <input type="checkbox" name="iam_student" id=iam_student />I am student
+        <input type="checkbox" name="iam_businesman" id=businesman />I am businesman <br><br>
+    
+<label for="age">BIRTHDAY</label>
+<input type="date" ><br>
+
+<label>SUBMIT </label>
+<input type="submit" value="submit"> <br><br>
+<label>RESET</label>
+<input type="reset" value="reset">
+</fieldset>
+</form>
+</body>
+</html>
